@@ -1,131 +1,184 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- nav-bar  -->
-  <section id="nav-bar" class="container">
-    <header class="nav-bar">
-      <div class="brand"><a href="#hero"><h1>Web Cifar</h1></a></div>
-      <div class="nav-list">
-        <div class="hamburger">
-          <div class="bar"></div>
-        </div>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">services</a></li>
-          <li><a href="#hire">Hire Me</a></li>
-        </ul>
-      </div>
-    </header>
-  </section>
-  <!-- End nav-bar  -->
+(function() {
+  var Util,
+    __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
-  <!-- Hero Section  -->
-  <section id="hero" class="hero container">
-    <div class="hero-info">
-      <h1 class="hero-info-heading">I Design <br>Your Dream</h1>
-      <p class="hero-info-subheading">I am a web designer</p>
-      <a href="#" type="button" class="hero-info-button">Portfolio</a>
-    </div>
-    <div class="hero-img">
-      <img src="./images/img-1.jpg" alt="">
-    </div>
-  </section>
-  <!-- End Hero Section  -->
+  Util = (function() {
+    function Util() {}
 
-  <!-- About section  -->
-  <section id="about" class="about container">
-    <div class="about-info">
-      <h1 class="about-info-heading">About Me</h1>
-      <p class="about-info-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi suscipit quidem ullam voluptates repellendus explicabo placeat, expedita ratione saepe eaque dolorum sed deleniti, odit numquam, nostrum tempore quos corrupti rem.</p>
-      <a href="#" type="button" class="about-info-button">Download Resume</a>
-    </div>
-    <div class="about-img">
-      <div class="about-img-wrapper">
-        <img src="./images/img-2.jpg" alt="">
-      </div>
-    </div>
-  </section>
-  <!-- End About section  -->
+    Util.prototype.extend = function(custom, defaults) {
+      var key, value;
+      for (key in custom) {
+        value = custom[key];
+        if (value != null) {
+          defaults[key] = value;
+        }
+      }
+      return defaults;
+    };
 
-  <!-- Service Section  -->
-  <section id="services" class="services container">
-    <div class="services-header">
-      <h1 class="services-header-heading">services</h1>
-      <p class="services-header-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni temporibus, omnis illum ipsa reiciendis illo eos odio possimus voluptatibus architecto.</p>
-    </div>
-    <div class="services-info">
-      <div class="service">
-        <div class="service-card">
-          <div class="service-front">
-            <i class="fa fa-palette"></i>
-            <h1 class="service-front-heading">Web Design</h1>
-          </div>
-          <div class="service-back">
-            <h1 class="service-back-heading">Web Design</h1>
-            <p class="service-back-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum aut dolor voluptatem incidunt placeat impedit laboriosam quam consequatur quasi nihil libero ad, quaerat, alias illum excepturi. Iste quo repellendus consequuntur asperiores dignissimos, quaerat obcaecati officiis repudiandae fugit tenetur nulla impedit!</p>
-          </div>
-        </div>
-      </div>
-      <div class="service">
-        <div class="service-card">
-          <div class="service-front">
-            <i class="fa fa-laptop-code"></i>
-            <h1 class="service-front-heading">Font End Dev</h1>
-          </div>
-          <div class="service-back">
-            <h1 class="service-back-heading">Front End Dev</h1>
-            <p class="service-back-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum aut dolor voluptatem incidunt placeat impedit laboriosam quam consequatur quasi nihil libero ad, quaerat, alias illum excepturi. Iste quo repellendus consequuntur asperiores dignissimos, quaerat obcaecati officiis repudiandae fugit tenetur nulla impedit!</p>
-          </div>
-        </div>
-      </div>
-      <div class="service">
-        <div class="service-card">
-          <div class="service-front">
-            <i class="fa fa-building"></i>
-            <h1 class="service-front-heading">Branding</h1>
-          </div>
-          <div class="service-back">
-            <h1 class="service-back-heading">Branding</h1>
-            <p class="service-back-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum aut dolor voluptatem incidunt placeat impedit laboriosam quam consequatur quasi nihil libero ad, quaerat, alias illum excepturi. Iste quo repellendus consequuntur asperiores dignissimos, quaerat obcaecati officiis repudiandae fugit tenetur nulla impedit!</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Service Section  -->
+    Util.prototype.isMobile = function(agent) {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(agent);
+    };
 
-  <!-- Hire Section  -->
-  <section id="hire" class="hire container">
-    <h1 class="hire-heading">Hire me to build your dream website</h1>
-    <a href="#" type="button" class="hire-button">Hire Me !!</a>
-  </section>
-  <!-- End Hire Section  -->
+    return Util;
 
-  <!-- Footer section  -->
-  <footer id="footer" class="footer container">
-    <div class="footer-contact">
-      <h1 class="footer-contact-heading">Contact With Me</h1>
-      <p class="footer-contact-info">Email: yourname@gamil.com</p>
-      <p class="footer-contact-info">Mobile: 234 234 2342</p>
-    </div>
-    <div class="footer-social-follow">
-      <h1 class="footer-social-follow-heading">Follow Me</h1>
-      <div class="footer-social-icon">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram-square"></i></a>
-        <a href="#"><i class="fab fa-behance-square"></i></a>
-        <a href="#"><i class="fab fa-dribbble-square"></i></a>
-      </div>
-    </div>
-  </footer>
-  <!-- End Footer section  -->
-  <script src="./app.js"></script>
-</body>
-</html>
+  })();
+
+  this.WOW = (function() {
+    WOW.prototype.defaults = {
+      boxClass: 'wow',
+      animateClass: 'animated',
+      offset: 0,
+      mobile: true
+    };
+
+    function WOW(options) {
+      if (options == null) {
+        options = {};
+      }
+      this.scrollCallback = __bind(this.scrollCallback, this);
+      this.scrollHandler = __bind(this.scrollHandler, this);
+      this.start = __bind(this.start, this);
+      this.scrolled = true;
+      this.config = this.util().extend(options, this.defaults);
+    }
+
+    WOW.prototype.init = function() {
+      var _ref;
+      this.element = window.document.documentElement;
+      this.boxes = this.element.getElementsByClassName(this.config.boxClass);
+      if (this.boxes.length) {
+        if (this.disabled()) {
+          return this.resetStyle();
+        } else {
+          if ((_ref = document.readyState) === "interactive" || _ref === "complete") {
+            return this.start();
+          } else {
+            return document.addEventListener('DOMContentLoaded', this.start);
+          }
+        }
+      }
+    };
+
+    WOW.prototype.start = function() {
+      var box, _i, _len, _ref;
+      _ref = this.boxes;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        box = _ref[_i];
+        this.applyStyle(box, true);
+      }
+      window.addEventListener('scroll', this.scrollHandler, false);
+      window.addEventListener('resize', this.scrollHandler, false);
+      return this.interval = setInterval(this.scrollCallback, 50);
+    };
+
+    WOW.prototype.stop = function() {
+      window.removeEventListener('scroll', this.scrollHandler, false);
+      window.removeEventListener('resize', this.scrollHandler, false);
+      if (this.interval != null) {
+        return clearInterval(this.interval);
+      }
+    };
+
+    WOW.prototype.show = function(box) {
+      this.applyStyle(box);
+      return box.className = "" + box.className + " " + this.config.animateClass;
+    };
+
+    WOW.prototype.applyStyle = function(box, hidden) {
+      var delay, duration, iteration;
+      duration = box.getAttribute('data-wow-duration');
+      delay = box.getAttribute('data-wow-delay');
+      iteration = box.getAttribute('data-wow-iteration');
+      return box.setAttribute('style', this.customStyle(hidden, duration, delay, iteration));
+    };
+
+    WOW.prototype.resetStyle = function() {
+      var box, _i, _len, _ref, _results;
+      _ref = this.boxes;
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        box = _ref[_i];
+        _results.push(box.setAttribute('style', 'visibility: visible;'));
+      }
+      return _results;
+    };
+
+    WOW.prototype.customStyle = function(hidden, duration, delay, iteration) {
+      var style;
+      style = hidden ? "visibility: hidden; -webkit-animation-name: none; -moz-animation-name: none; animation-name: none;" : "visibility: visible;";
+      if (duration) {
+        style += "-webkit-animation-duration: " + duration + "; -moz-animation-duration: " + duration + "; animation-duration: " + duration + ";";
+      }
+      if (delay) {
+        style += "-webkit-animation-delay: " + delay + "; -moz-animation-delay: " + delay + "; animation-delay: " + delay + ";";
+      }
+      if (iteration) {
+        style += "-webkit-animation-iteration-count: " + iteration + "; -moz-animation-iteration-count: " + iteration + "; animation-iteration-count: " + iteration + ";";
+      }
+      return style;
+    };
+
+    WOW.prototype.scrollHandler = function() {
+      return this.scrolled = true;
+    };
+
+    WOW.prototype.scrollCallback = function() {
+      var box;
+      if (this.scrolled) {
+        this.scrolled = false;
+        this.boxes = (function() {
+          var _i, _len, _ref, _results;
+          _ref = this.boxes;
+          _results = [];
+          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+            box = _ref[_i];
+            if (!(box)) {
+              continue;
+            }
+            if (this.isVisible(box)) {
+              this.show(box);
+              continue;
+            }
+            _results.push(box);
+          }
+          return _results;
+        }).call(this);
+        if (!this.boxes.length) {
+          return this.stop();
+        }
+      }
+    };
+
+    WOW.prototype.offsetTop = function(element) {
+      var top;
+      top = element.offsetTop;
+      while (element = element.offsetParent) {
+        top += element.offsetTop;
+      }
+      return top;
+    };
+
+    WOW.prototype.isVisible = function(box) {
+      var bottom, offset, top, viewBottom, viewTop;
+      offset = box.getAttribute('data-wow-offset') || this.config.offset;
+      viewTop = window.pageYOffset;
+      viewBottom = viewTop + this.element.clientHeight - offset;
+      top = this.offsetTop(box);
+      bottom = top + box.clientHeight;
+      return top <= viewBottom && bottom >= viewTop;
+    };
+
+    WOW.prototype.util = function() {
+      return this._util || (this._util = new Util());
+    };
+
+    WOW.prototype.disabled = function() {
+      return this.config.mobile === false && this.util().isMobile(navigator.userAgent);
+    };
+
+    return WOW;
+
+  })();
+
+}).call(this);
